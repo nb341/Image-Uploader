@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+
+
+.upload-container{
+  
+  width: 402px;
+  height: 469px;
+  margin: 0;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+
+.header{
+ 
+
+ 
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+    color: #4F4F4F;
+    letter-spacing: -0.035em;
+    padding: 36px 110px 16px 110px;
+    text-align: center;
+}
+
+.file-type{
+ 
+  
+  
+  font-size: 10px;
+  line-height: 15px;
+  /* identical to box height */
+  
+  text-align: center;
+  letter-spacing: -0.035em;
+  
+  /* Gray 3 */
+  
+  color: #828282;
+}
+
+.drop-zone{
+
+
+background: #F6F8FB;
+border: 1px dashed #97BEF4;
+box-sizing: border-box;
+border-radius: 12px;
+width: 338px;
+height: 218.9px;
+
+}
+
+
+
+.img{
+
+ 
+
+/* Gray 4 */
+
+  background: #BDBDBD;
+  display: block;
+  margin: 35px auto 37px;
+
+}
+
+.drop-text{
+
+font-size: 12px;
+line-height: 18px;
+/* identical to box height */
+text-align: center;
+letter-spacing: -0.035em;
+
+/* Gray 4 */
+
+color: #BDBDBD;
+}
+
+.or{
+  
+font-size: 12px;
+line-height: 18px;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: -0.035em;
+
+/* Gray 4 */
+
+color: #BDBDBD;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+.select-file{
+ 
+
+  display: block;
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.035em;
+  color: #FFFFFF;
+  padding: 8px 16px 8px 16px;
+  background: #2F80ED;
+  border-radius: 8px;
+  border: solid #2F80ED;
+  margin: 0 auto;
+
+}
+

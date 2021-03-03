@@ -1,0 +1,25 @@
+{
+  "name": "image-uploader-master",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "description": "DevChallenges full-stack challenge",
+  "main": "server.js",
+  "repository": "git@github.com:nb341/Image-Uploader.git",
+  "author": "Narindra Balkissoon",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "nodemon": "^2.0.7"
+  }
+}
