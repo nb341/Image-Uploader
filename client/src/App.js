@@ -9,9 +9,9 @@
 class App extends Component {
 
   state = { 
-    showImageUpload: true,
-    showUploading: false,
-    showUploadFinised: false
+    showImageUpload: false,
+    showUploading: !true,
+    showUploadFinised: !false
   }
 
   updateHandler(state){
@@ -28,8 +28,8 @@ class App extends Component {
     return(
       <div>
       {this.state.showImageUpload && <ImageUploader/>}
-      {this.state.Uploading && <Uploading/>}
-      {this.state.UploadFinised && <UploadFinised/>}
+      {this.state.showUploading && <Uploading/>}
+      {this.state.showUploadFinised && <UploadFinised/>}
       </div>
     )
   }
