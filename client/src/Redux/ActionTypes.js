@@ -1,0 +1,3 @@
+export const IMAGE_SELECT = 'IMAGE_SELECT';
+export const IMAGE_UPLOADING = 'IMAGE_UPLOADING';
+export const IMAGE_UPLOADED = 'IMAGE_UPLOADED';

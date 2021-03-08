@@ -1,35 +1,24 @@
 // import bgSVG from './assets/image.svg'
-  import './App.css';
- import React, {Component} from 'react';
- import ImageUploader from './components/ImageUploader';
- import Uploading from './components/Uploading';
- import UploadFinised from './components/UploadFinished';
+import './App.css';
+import React, {Component} from 'react';
+import Main from './components/Main';
+import { Provider } from 'react-redux';
+import { ConfigureStore } from './Redux/store';
+const store = ConfigureStore();
+
+
 
 
 class App extends Component {
 
-  state = { 
-    showImageUpload: false,
-    showUploading: !true,
-    showUploadFinised: !false
-  }
-
-  updateHandler(state){
-     this.setState(
-       {
-        showImageUpload: state.showImageUpload,
-        showUploading: state.showUploading,
-        showUploadFinised: state.showUploadFinised
-       }
-     )
-  }
+ 
 
   render(){
     return(
       <div>
-      {this.state.showImageUpload && <ImageUploader/>}
-      {this.state.showUploading && <Uploading/>}
-      {this.state.showUploadFinised && <UploadFinised/>}
+    <Provider store={store}>
+      <Main/>
+    </Provider>  
       </div>
     )
   }

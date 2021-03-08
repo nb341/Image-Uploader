@@ -74,7 +74,7 @@ box-sizing: border-box;
 border-radius: 12px;
 width: 338px;
 height: 218.9px;
-
+cursor: grabbing;
 }
 
 
@@ -170,17 +170,55 @@ margin-top: 36px;
 margin-left: 32px;
 }
 
-.progress-bar{
-  display: block;
-  margin: 0 auto;
+ .progress-bar{
+  
+  /* width: 340px;
+  height: 6px;
+  margin: 30px 27px auto;
   width: 340px;
-  animation: progressBar 3s ease-in-out;
+  border-radius: 8px;
+  background: #f2f2f2; */
+  margin: 30px 27px auto;
+  background: #f2f2f2;
+  width: 340px;
+  border-radius: 8px;
+
 }
 
-@keyframes progressBar {
-  0% { width: 0; }
-  100% { width: 100%; }
+.progress{
+
+
+  background: #2F80ED;
+  width: 100px;
+  height: 6px;
+  position: relative;
+  animation: alternating 1.3s infinite;
+  animation-direction: alternate-reverse;
+  border-radius: 8px;
 }
+
+@keyframes alternating {
+  0%   {left: 0px; top: 0px; opacity: 0.6}
+  50% { opacity: 1;}
+  100% {left: 240px; top: 0px; opacity: 0.4;}
+}
+
+ /*original css for progress bar*/
+/* .bar {
+  width: 100px;
+  height: 6px;
+  background: blue;
+  position: relative;
+  animation: myfirst 1.3s infinite;
+  animation-direction: alternate;
+  border-radius: 8px;
+}
+.pro{
+  background: #f2f2f2;
+  width: 340px;
+  border-radius: 8px;
+} */
+
 
 .uploaded{
   

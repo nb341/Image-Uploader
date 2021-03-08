@@ -27,6 +27,7 @@ class DropZone extends Component {
     e.preventDefault()
     e.stopPropagation()
     console.log("hello world drop file")
+    this.props.goToUploading();
   }
   componentDidMount() {
     let div = this.dropRef.current
