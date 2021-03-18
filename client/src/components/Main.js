@@ -45,7 +45,7 @@ class Main extends Component {
  render(){
    return(
      <div>
-     {this.props.showImageUpload && <ImageUploader uploadView = {this.props.uploadingAction}/>}
+     {this.props.showImageUpload && <ImageUploader selectView = {this.props.selectAction} uploadView = {this.props.uploadingAction} uploadedView ={this.props.uploadedAction}/>}
      {this.props.showUploading && <Uploading uploadedView ={this.props.uploadedAction}/>}
      {this.props.showUploadFinised && <UploadFinised selectView = {this.props.selectAction}/>}
      </div>

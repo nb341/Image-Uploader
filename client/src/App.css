@@ -136,8 +136,12 @@ color: #BDBDBD;
   background: #2F80ED;
   border-radius: 8px;
   border: solid #2F80ED;
-  margin: 0 auto;
+  margin: 0 150px;
+  
+}
 
+.select-file>input[type="file"] {
+  display: none;
 }
 
 /** Uploading Bruh **/
@@ -267,8 +271,6 @@ display: block;
 margin: 0 auto;
 width: 338px;
 height: 224.4px;
-
-background: url('https://s3-alpha-sig.figma.com/img/6362/70cb/78c41ffde32676da84f70ae07c8f226b?Expires=1615161600&Signature=KZRTjqi2cdKzI7tetPNctwr99aOsq7o8hPOxVHLBHn5kyt-bgxKF7vyDSFgTQFJhUOmRcIulgmAVwUR40GvsZZx1zLRRqWDGYaO8PjfOCUcmqWVgZI3W-LBarkiJdq5fENSaip6r5CMtxCAmNKb5qP3wNDmZHjvvY~Mivl8~xcx06~NaUbYGW~VAMxuRpO7FQI4es-uIPbCSiDOghRzAvdJPjYSTOWc~39RQhzUlm~QifkIjJKwQEHN6Zu23EbgYDdFp7SHl0Cn9vEk9nQRkEJoBuwA5ccGNI1XfJtWqQ8Ko~xgbFChQgYA~Gn39n7V6N4iVbCcuaCB~VWrYeg1VaQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA');
 border-radius: 12px;
 background-size: cover;
 }
@@ -284,7 +286,7 @@ background-size: cover;
 height: 34px;
 background: #F6F8FB;
 /* Gray 5 */
-
+padding-right: 72px;
 border: 1px solid #E0E0E0;
 box-sizing: border-box;
 border-radius: 8px;

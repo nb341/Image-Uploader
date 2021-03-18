@@ -1,3 +1,4 @@
+import ImageUploader from '../components/ImageUploader';
 import * as ActionTypes from './ActionTypes';
 export const selectAction = ()=>{
     return {
