@@ -10,13 +10,14 @@ const mapStateToProps = state => {
   return {
     showImageUpload: state.showImageUpload,
     showUploading: state.showUploading,
-    showUploadFinised: state.showUploadFinised
+    showUploadFinised: state.showUploadFinised,
+    imgUrl: state.imgUrl
   }
 }
 const mapDispatchToProps = dispatch => ({
   selectAction: () => { dispatch(selectAction())},
   uploadingAction: ()=> {dispatch(uploadingAction())},
-  uploadedAction: ()=> {dispatch(uploadedAction())}
+  uploadedAction: (imgUrl)=> {dispatch(uploadedAction(imgUrl))}
  
 });
 
@@ -47,7 +48,7 @@ class Main extends Component {
      <div>
      {this.props.showImageUpload && <ImageUploader selectView = {this.props.selectAction} uploadView = {this.props.uploadingAction} uploadedView ={this.props.uploadedAction}/>}
      {this.props.showUploading && <Uploading uploadedView ={this.props.uploadedAction}/>}
-     {this.props.showUploadFinised && <UploadFinised selectView = {this.props.selectAction}/>}
+     {this.props.showUploadFinised && <UploadFinised imgUrl={this.props.imgUrl} selectView = {this.props.selectAction}/>}
      </div>
    )
  }

@@ -3,7 +3,8 @@ import * as ActionTypes from './ActionTypes';
 const INITIAL_STATE = {
     showImageUpload: true,
     showUploading: false,
-    showUploadFinised: false
+    showUploadFinised: false,
+    imgUrl: ''
   }
   //actions
   
@@ -23,14 +24,16 @@ const INITIAL_STATE = {
           ...state,
           showImageUpload: false,
           showUploading: true,
-          showUploadFinised: false
+          showUploadFinised: false,
+          
         };
       case ActionTypes.IMAGE_UPLOADED:
         return {
           ...state,
           showImageUpload: false,
           showUploading: false,
-          showUploadFinised: true
+          showUploadFinised: true,
+          imgUrl: action.payload.imgUrl
         };
       default:
         return INITIAL_STATE;

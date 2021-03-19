@@ -5,6 +5,8 @@ const app = express();
 const cors = require('cors');
 const port = process.env.PORT || 5000;
 
+const baseUrl = "http://localhost:5000/";
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -23,9 +25,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/api/hello', (req, res) => {
-  res.send({ express: 'Hello From Express' });
-});
+// app.use(express.static(path.join(__dirname, 'build')));
+
+
+// app.get('/*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// });
 
 app.post('/postImage', (req, res) => {
   
@@ -40,7 +45,9 @@ app.post('/postImage', (req, res) => {
       res.send({err: true});
     }
     else{
-      res.send({success: true})
+      let imgUrl =  baseUrl+'uploads/' + req.file.filename;
+      console.log(imgUrl)
+      res.send({err:false,success: true, url: imgUrl })
     }
     
     

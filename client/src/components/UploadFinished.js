@@ -1,18 +1,27 @@
-import {useRef, useState, useEffect} from 'react';
+
+import {useState} from 'react';
 
 
+export default function UploadFinised(props){
 
+    const [btnTxt, setBtnTxt] = useState('Copy Link')
 
-export default function UploadFinised(){
-    const copyLink = useRef(null);
-    
     return (
     <div className="uploaded">
         <span id="checked" className="material-icons">check_circle</span>
         <p className="header-finised">Uploaded Successfully</p>
-        <img alt="" src="http://localhost:5000/uploads/image-1615923144310petra-bouchalova-3BkznbMKp1I-unsplash.jpg.jpg" id="img-uploaded"/>
+        <img alt="" src={props.imgUrl} id="img-uploaded"/>
         <div id="copy-container">
-            <input id="link-box" value="http://localhost:5000/uploads/image-1615923144310petra-bouchalova-3BkznbMKp1I-unsplash.jpg.jpg" type="text" /><button id="copy-link">Copy Link</button>
+            <input id="link-box" readOnly value={props.imgUrl} type="text" />
+            <button 
+            onClick={(e) => {
+                navigator.clipboard.writeText(props.imgUrl);  
+                e.target.focus();
+                setBtnTxt('Copied');
+            
+            }} 
+            
+            id="copy-link">{btnTxt}</button>
         </div>
     </div>
     );

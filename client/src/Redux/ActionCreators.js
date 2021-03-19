@@ -1,4 +1,4 @@
-import ImageUploader from '../components/ImageUploader';
+
 import * as ActionTypes from './ActionTypes';
 export const selectAction = ()=>{
     return {
@@ -13,8 +13,11 @@ export const uploadingAction = ()=>{
     }
   }
   
-export const uploadedAction = ()=>{
+export const uploadedAction = (imgUrl)=>{
     return {
-      type: ActionTypes.IMAGE_UPLOADED
+      type: ActionTypes.IMAGE_UPLOADED,
+      payload:{
+      imgUrl: imgUrl
+      }
     }
   }

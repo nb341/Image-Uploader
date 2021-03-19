@@ -1,12 +1,14 @@
-import React, {Component, useRef} from 'react';
+import React, {Component} from 'react';
 import bgSVG from '../assets/image.svg';
 import DropZone from './DropZone';
-import axios from 'axios';
+
 class ImageUploader extends Component {
     constructor(props){
         super(props);
     }
-    selectRef = React.createRef()
+
+    selectRef = React.createRef();
+
     onFileChange = event => {
     
         // Update the state
@@ -28,8 +30,13 @@ class ImageUploader extends Component {
           .then(data => {
             console.log(data.err + "Response Here")
             if(data.err) this.props.selectView();
-            else
-            this.props.uploadedView();
+            else{
+              
+              console.log("Look for this "+data.url)
+              console.log(typeof data.url)
+            this.props.uploadedView(data.url);
+            
+            }
           })
           .catch(error => {
             console.error(error);
