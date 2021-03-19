@@ -335,13 +335,17 @@ button:focus{
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 #creator{
-  
+  position: absolute;
+  bottom: 3%;
+  display: inline-block;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  margin: 265px auto 0;
   font-size: 14px;
   line-height: 17px;
   color: #A9A9A9;
+  text-align: center;
+  width: 100%;
+
 }
 
 #username{
