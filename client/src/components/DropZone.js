@@ -23,11 +23,45 @@ class DropZone extends Component {
     console.log("hello world from drag out")
     this.setState({drag: false})
   }
-  handleDrop = (e) => {
-    e.preventDefault()
-    e.stopPropagation()
+  handleDrop = (event) => {
+    
+    event.stopPropagation()
     console.log("hello world drop file")
-    this.props.goToUploading();
+   
+    
+      // Update the state
+      event.preventDefault();
+      const files = event.dataTransfer.files;
+      //console.log(files[0])
+      const formData = new FormData();
+      formData.append('image', files[0]);
+      console.log(formData.get('image'))
+      this.props.uploadView();
+      fetch('http://localhost:5000/postImage/', {
+          method: 'POST',
+          mode: "cors",
+          cache: "no-cache", 
+          credentials: "same-origin",
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data.err + "Response Here")
+          if(data.err) this.props.selectView();
+          else{
+            
+            console.log("Look for this "+data.url)
+            console.log(typeof data.url)
+          this.props.uploadedView(data.url);
+          
+          }
+        })
+        .catch(error => {
+          console.error(error);
+          this.props.selectView();
+        })
+
+    
   }
   componentDidMount() {
     let div = this.dropRef.current

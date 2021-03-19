@@ -45,6 +45,8 @@ app.post('/postImage', (req, res) => {
       res.send({err: true});
     }
     else{
+     
+        
       let imgUrl =  baseUrl+'uploads/' + req.file.filename;
       console.log(imgUrl)
       res.send({err:false,success: true, url: imgUrl })
