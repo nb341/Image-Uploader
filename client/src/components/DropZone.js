@@ -37,7 +37,7 @@ class DropZone extends Component {
       formData.append('image', files[0]);
       console.log(formData.get('image'))
       this.props.uploadView();
-      fetch('http://localhost:5000/postImage/', {
+      fetch('postImage/', {
           method: 'POST',
           mode: "cors",
           cache: "no-cache", 
