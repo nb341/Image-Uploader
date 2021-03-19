@@ -275,9 +275,9 @@ border-radius: 12px;
 background-size: cover;
 }
 
-#link{
+/* #link{
 
-}
+} */
 
 
 #link-box{
@@ -330,4 +330,23 @@ button:focus{
   border: 1px solid #E0E0E0;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   color: #E0E0E0 !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+#creator{
+  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  margin: 265px auto 0;
+  font-size: 14px;
+  line-height: 17px;
+  color: #A9A9A9;
+}
+
+#username{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #A9A9A9;
+  font-size: 14px;
 }

@@ -49,7 +49,7 @@ class Main extends Component {
      {this.props.showImageUpload && <ImageUploader selectView = {this.props.selectAction} uploadView = {this.props.uploadingAction} uploadedView ={this.props.uploadedAction}/>}
      {this.props.showUploading && <Uploading uploadedView ={this.props.uploadedAction}/>}
      {this.props.showUploadFinised && <UploadFinised imgUrl={this.props.imgUrl} selectView = {this.props.selectAction}/>}
-     <p style={{marginTop: '95%', margin: [0, 'auto']}}>created by Narindra Balkissoon</p>
+     <p id="creator">created by <a href="https://github.com/nb341" target="_blank" rel="noreferrer" id="username">nb341</a> - devChallenges.io</p>
      </div>
    )
  }
