@@ -3,9 +3,9 @@ const multer = require('multer');
 const path = require('path');
 const app = express();
 const cors = require('cors');
-const port = 5000;
+const port = process.env.PORT || 5000;;
 
-const baseUrl = "http://localhost:5000/";
+const baseUrl = "";
 
 app.use(express.static(path.join(__dirname, 'public')));
 

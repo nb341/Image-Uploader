@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "client": "cd client && yarn start",
-    "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "production": "(cd client && yarn build) && mv build ../ && cd ../ && rm -rf client"
+    "start": "node server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn start\" \"yarn client\"",
+    "heroku-postbuild": "cd client && yarn install && yarn install --only=dev --no-shrinkwrap && yarn build"
   },
   "description": "DevChallenges full-stack challenge",
   "main": "server.js",
