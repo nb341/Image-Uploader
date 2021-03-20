@@ -38,7 +38,7 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+<!-- ![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png) -->
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
@@ -70,6 +70,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 # Clone this repository
 $ git clone https://github.com/nb341/Image-Uploader.git
 
+#make sure yarn is installed if using yarn
 
 # Run the app
 $ yarn prod
@@ -77,14 +78,20 @@ $ yarn prod
 #If you want to develop this app further run
 $ yarn dev
 
-then run locally on localhost:3000, you can also use the relevant linux or windows command in yarn prod command, to clean up
-unused files in production. Important remember to move build to root folder, then remove client and change static directory in server.js
-to 
+# then run locally on localhost:3000, you can also use the relevant linux or windows command 
+# in yarn prod command, to clean upunused files in production. Important remember to move 
+# build to root folder, then remove client and change static directory in server.js
+
+#to
+
 $ app.use(express.static(path.join(__dirname, '/build')));
 
-and 
+#and 
 
 $ res.sendFile(path.join(__dirname, 'build', 'index.html'));
+
+#alternatively you can use npm but first delete the yarn.lock file in root and client folders
+
 
 # ONLY IF YOU DELETE USED FILES
 ```
@@ -103,4 +110,5 @@ $ res.sendFile(path.join(__dirname, 'build', 'index.html'));
 
 ## Todo
 - Auto delete uploaded files after 15 minutes or after 100mb cap
+
 
