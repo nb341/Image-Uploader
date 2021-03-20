@@ -43,9 +43,8 @@
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
 - View demo on [Heroku](https://image-uploader-project.herokuapp.com/)
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+- Refresher on Redux and React state management as well as CSS.
+- Use figma designs to build front-end to finish quickly
 
 ### Built With
 
@@ -69,13 +68,25 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/nb341/Image-Uploader.git
 
-# Install dependencies
-$ yarn install
 
 # Run the app
-$ yarn start
+$ yarn prod
+
+#If you want to develop this app further run
+$ yarn dev
+
+then run locally on localhost:3000, you can also use the relevant linux or windows command in yarn prod command, to clean up
+unused files in production. Important remember to move build to root folder, then remove client and change static directory in server.js
+to 
+$ app.use(express.static(path.join(__dirname, '/build')));
+
+and 
+
+$ res.sendFile(path.join(__dirname, 'build', 'index.html'));
+
+# ONLY IF YOU DELETE USED FILES
 ```
 
 ## Acknowledgements
@@ -91,5 +102,5 @@ $ yarn start
 - Website [Narindra Balkissoon](https://narinbalkissoon.vercel.app/)
 
 ## Todo
-- Auto delete files after 15 minutes or after 100mb cap
+- Auto delete uploaded files after 15 minutes or after 100mb cap
 

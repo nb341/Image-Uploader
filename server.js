@@ -5,7 +5,7 @@ const app = express();
 const cors = require('cors');
 const port = process.env.PORT || 5000;;
 
-const baseUrl = "https://image-uploader-project.herokuapp.com/";
+let baseUrl = `http://localhost:${port}/`;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -36,10 +36,19 @@ if (process.env.NODE_ENV === 'production') {
   // Serve any static files
   app.use(express.static(path.join(__dirname, 'client/build')));
 // Handle React routing, return all requests to React app
+  baseUrl = `https://image-uploader-project.herokuapp.com/`;
   app.get('*', function(req, res) {
+    console.log(baseUrl)
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}else{
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.get('/', function(req, res) {
+    console.log(baseUrl)
     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
   });
 }
+
 
 app.post('/postImage', (req, res) => {
   
@@ -54,10 +63,10 @@ app.post('/postImage', (req, res) => {
       res.send({err: true});
     }
     else{
-     
+       
         
       let imgUrl =  baseUrl+'uploads/' + req.file.filename;
-      console.log(imgUrl)
+      console.log(baseUrl)
       res.send({err:false,success: true, url: imgUrl })
     }
     

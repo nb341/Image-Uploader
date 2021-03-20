@@ -5,6 +5,7 @@
     "client": "cd client && yarn start",
     "start": "node server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn start\" \"yarn client\"",
+    "prod": "yarn install && cd client && yarn install && yarn build && cd ../ && yarn start",
     "heroku-postbuild": "cd client && yarn install && yarn install --only=dev --no-shrinkwrap && yarn build"
   },
   "description": "DevChallenges full-stack challenge",
