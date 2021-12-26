@@ -1,29 +1,27 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react';
 
-class DropZone extends Component {
-  state = {
-    drag: false
-  }
-  dropRef = React.createRef()
-  handleDrag = (e) => {
+function DropZone(props){
+  const [drag, setDrag] = useState({drag: false});
+  const dropRef = React.createRef();
+  const handleDrag = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    this.setState({
+    setDrag({
       drag: false
     })
   }
-  handleDragIn = (e) => {
+  const handleDragIn = (e) => {
     e.preventDefault()
     e.stopPropagation()
     console.log("hello world drag in")
   }
-  handleDragOut = (e) => {
+  const handleDragOut = (e) => {
     e.preventDefault()
     e.stopPropagation()
     console.log("hello world from drag out")
-    this.setState({drag: false})
+    setDrag({drag: false})
   }
-  handleDrop = (event) => {
+  const handleDrop = (event) => {
     
     event.stopPropagation()
     console.log("hello world drop file")
@@ -36,7 +34,7 @@ class DropZone extends Component {
       const formData = new FormData();
       formData.append('image', files[0]);
       console.log(formData.get('image'))
-      this.props.uploadView();
+      props.uploadView();
       fetch('postImage/', {
           method: 'POST',
           mode: "cors",
@@ -47,42 +45,41 @@ class DropZone extends Component {
         .then(response => response.json())
         .then(data => {
           console.log(data.err + "Response Here")
-          if(data.err) this.props.selectView();
+          if(data.err) props.selectView();
           else{
             
             console.log("Look for this "+data.url)
             console.log(typeof data.url)
-          this.props.uploadedView(data.url);
+            props.uploadedView(data.url);
           
           }
         })
         .catch(error => {
           console.error(error);
-          this.props.selectView();
+          props.selectView();
         })
 
     
   }
-  componentDidMount() {
-    let div = this.dropRef.current
-    div.addEventListener('dragenter', this.handleDragIn)
-    div.addEventListener('dragleave', this.handleDragOut)
-    div.addEventListener('dragover', this.handleDrag)
-    div.addEventListener('drop', this.handleDrop)
-  }
-  componentWillUnmount() {
-    let div = this.dropRef.current
-    div.removeEventListener('dragenter', this.handleDragIn)
-    div.removeEventListener('dragleave', this.handleDragOut)
-    div.removeEventListener('dragover', this.handleDrag)
-    div.removeEventListener('drop', this.handleDrop)
-  }
-  render() {
-    return (
-        <div style={{margin: 'auto'}} ref={this.dropRef} className="drop-zone">
-         {this.props.children}
-      </div>
-    )
-  }
+
+  useEffect(()=>{
+    let div = dropRef.current
+    div.addEventListener('dragenter', handleDragIn)
+    div.addEventListener('dragleave', handleDragOut)
+    div.addEventListener('dragover', handleDrag)
+    div.addEventListener('drop', handleDrop)
+    return ()=>{
+      div.removeEventListener('dragenter', handleDragIn)
+      div.removeEventListener('dragleave', handleDragOut)
+      div.removeEventListener('dragover', handleDrag)
+      div.removeEventListener('drop', handleDrop)
+    }
+  }, [dropRef])
+  return (
+    <div style={{margin: 'auto'}} ref={dropRef} className="drop-zone">
+      {props.children}
+    </div>
+)
 }
+
 export default DropZone
