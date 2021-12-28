@@ -23,22 +23,6 @@ const mapDispatchToProps = dispatch => ({
 
 class Main extends Component {
 
-//  state = { 
-//    showImageUpload: true,
-//    showUploading: false,
-//    showUploadFinised: false
-//  }
-
-//  updateHandler(state){
-//     this.setState(
-//       {
-//        showImageUpload: state.showImageUpload,
-//        showUploading: state.showUploading,
-//        showUploadFinised: state.showUploadFinised
-//       }
-//     )
-//  }
-
 
 
 

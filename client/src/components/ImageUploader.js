@@ -65,7 +65,7 @@ function ImageUploader(props){
             <div className="upload-container">
               <h1 className="header">Upload your image</h1>
               <p className="file-type">File should be Jpeg, Png...</p>
-              <DropZone fileChange={onFileChange} uploadedView={props.uploadedView} selectView = {props.selectView} uploadView={props.uploadView}>
+              <DropZone uploadedView={props.uploadedView} selectView = {props.selectView} uploadView={props.uploadView}>
                 <img className="img" src={bgSVG} alt="mountain behind clouds"/>
                 <p className="drop-text">Drag & Drop your image here</p>
               </DropZone>
