@@ -2,11 +2,10 @@
   "name": "image-uploader-master",
   "version": "1.0.0",
   "scripts": {
-    "client": "cd client && npm start",
+    "client": "cd client && npm run start",
     "start": "node server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm start\" \"npm client\"",
-    "prod": "npm install && cd client && npm install && npm run build && cd ../ && npm start",
-    "heroku-postbuild": "cd client && yarn install && yarn install --only=dev --no-shrinkwrap && yarn build"
+    "dev": "concurrently --kill-others-on-fail \"npm start\" \"npm run client\"",
+    "prod": "npm install && cd client && npm install && npm run build && cd ../ && npm run start"
   },
   "description": "DevChallenges full-stack challenge",
   "main": "server.js",
