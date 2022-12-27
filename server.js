@@ -3,7 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const app = express();
 const cors = require('cors');
-const port = process.env.PORT || 3001;;
+const port = process.env.PORT || 10000;;
 
 let baseUrl = `http://localhost:${port}/`;
 
