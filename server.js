@@ -76,4 +76,4 @@ app.post('/postImage', (req, res) => {
   
 });
 
-app.listen(port, () => console.log(`Listening on port ${port} url;${baseUrl}`));
+app.listen(port, () => console.log(`Listening on port ${port} url;${baseUrl} dir:${__dirname}`));
