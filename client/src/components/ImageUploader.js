@@ -21,7 +21,7 @@ function ImageUploader(props){
         formData.append('image', files[0]);
         console.log(formData.get('image'))
         props.uploadView();
-        fetch('postImage/', {
+        fetch('https://image-uploader-08jw.onrender.com/postImage/', {
             method: 'POST',
             mode: "cors",
             cache: "no-cache", 
