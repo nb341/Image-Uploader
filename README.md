@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://image-uploader-project.herokuapp.com/">
+    <a href="https://image-uploader-08jw.onrender.com/">
       Demo
     </a>
     <span> | </span>
